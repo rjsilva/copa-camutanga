@@ -51,7 +51,7 @@
      Horários sempre no formato "2026-10-24T14:00:00-03:00" (horário de Recife).
 
    CUIDADOS: mantenha as aspas "", as vírgulas no fim de cada linha e as chaves { }.
-   Se algo der errado, abra o site pelo computador: uma faixa amarela avisa o problema.
+   Se algo der errado, abra o site pelo computador: uma faixa branca com borda vermelha avisa o problema.
    ========================================================================== */
 
 window.COPA = {

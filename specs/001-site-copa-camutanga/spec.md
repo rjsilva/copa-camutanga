@@ -455,23 +455,23 @@ lista vazia, a seção não aparece.
 - **FR-020**: Todo o conteúdo MUST estar em português do Brasil; datas no formato DD/MM (com dia
   da semana abreviado na tabela, ex.: "Sáb 24/10") e horários no formato 24h, sempre no fuso de
   Recife (UTC-3), independentemente do fuso do visitante.
-- **FR-021**: O visual MUST seguir a identidade do cartaz oficial, com a paleta:
-  azul-marinho #0B1E4F (fundo), azul royal #1F4FD1 (faixas de grupo, botões), azul elétrico
-  #3B7BFF (brilhos, hover), vermelho #D62828 (faixas de título/rodada/data, horário), vermelho
-  escuro #9E1B1B (sombras/bordas), amarelo-ouro #FFD23F (títulos de rodada, destaques), branco
-  #FFFFFF (cards de confronto, textos sobre fundo escuro), cinza-prata #C9CED6 (detalhes
-  metálicos) e verde-gramado #2E7D32 (rodapé).
+- **FR-021**: O visual MUST seguir as cores do logo oficial (sem amarelo), com a paleta:
+  azul-marinho #0B1E4F (fundo), azul royal #2E4CCA (faixas de grupo, botões), azul elétrico
+  #3B7BFF (brilhos, hover), vermelho #D5362A (faixas de título/rodada/data, horário), vermelho
+  escuro #9C2721 (sombras/bordas), branco #FFFFFF (cards, textos sobre vermelho e fundo escuro),
+  prata-clara #DFDFE7 (destaques, links, foco — cromado do troféu), cinza-prata #C9CED6
+  (detalhes metálicos) e verde-gramado #2E7D32 (rodapé).
 - **FR-022**: Fundo em gradiente azul-marinho → azul royal (estádio à noite com refletores),
   faixas diagonais em "pinceladas" vermelhas e brancas nas bordas e textura sutil de gramado no
   rodapé.
 - **FR-023**: Títulos MUST usar fonte condensada, caixa alta e itálica com contorno; o corpo do
   texto, fonte sans legível. As fontes MUST estar incluídas no próprio site, com alternativa do
   sistema caso não carreguem.
-- **FR-024**: Títulos de rodada MUST aparecer em faixa vermelha com texto amarelo-ouro; títulos
+- **FR-024**: Títulos de rodada MUST aparecer em faixa vermelha com texto branco; títulos
   de data em faixa vermelha com texto branco; cada jogo com horário em bloco vermelho, grupo em
   bloco azul royal e confronto em card branco com texto azul-marinho.
 - **FR-025**: Todas as combinações de cor de texto/fundo MUST atingir contraste mínimo WCAG AA
-  (ex.: nunca amarelo sobre branco).
+  (ex.: nunca vermelho sobre azul-marinho em texto pequeno).
 - **FR-026**: O site MUST ser navegável por teclado, com foco visível, e toda imagem informativa
   MUST ter texto alternativo.
 - **FR-027**: O site MUST ser responsivo, funcionando de 360px (celular) a 1920px (desktop)

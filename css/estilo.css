@@ -30,11 +30,11 @@
 /* ---------------------------------------------------------------- tokens */
 :root {
   --azul-marinho: #0B1E4F;
-  --azul-royal: #1F4FD1;
+  --azul-royal: #2E4CCA;
   --azul-eletrico: #3B7BFF;
-  --vermelho: #D62828;
-  --vermelho-escuro: #9E1B1B;
-  --ouro: #FFD23F;
+  --vermelho: #D5362A;
+  --vermelho-escuro: #9C2721;
+  --prata-clara: #DFDFE7; /* cromado do troféu no logo */
   --branco: #FFFFFF;
   --prata: #C9CED6;
   --gramado: #2E7D32;
@@ -89,11 +89,11 @@ img, svg { max-width: 100%; display: block; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 .bloco-classificacao { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
-a { color: var(--ouro); }
+a { color: var(--prata-clara); }
 a:hover { color: var(--branco); }
 
 :focus-visible {
-  outline: 3px solid var(--ouro);
+  outline: 3px solid var(--prata-clara);
   outline-offset: 3px;
 }
 
@@ -118,7 +118,7 @@ a:hover { color: var(--branco); }
   top: -60px;
   z-index: 100;
   padding: var(--espaco-2) var(--espaco-3);
-  background: var(--ouro);
+  background: var(--branco);
   color: var(--azul-marinho);
   font-weight: 700;
   border-radius: var(--raio);
@@ -168,7 +168,7 @@ h1, h2, h3, .titulo {
 .faixa-rodada {
   margin: var(--espaco-5) 0 var(--espaco-3);
   font-size: 34px;
-  color: var(--ouro);
+  color: var(--branco);
   transform: skewX(var(--inclinacao));
 }
 .faixa-data {
@@ -220,7 +220,7 @@ h1, h2, h3, .titulo {
 .marca-texto small {
   display: block;
   font-size: 15px;
-  color: var(--ouro);
+  color: var(--prata-clara);
   letter-spacing: 0.08em;
 }
 .menu ul {
@@ -265,7 +265,8 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 .noscript {
   margin: var(--espaco-4) 0;
   padding: var(--espaco-3);
-  background: var(--ouro);
+  background: var(--branco);
+  border-left: 6px solid var(--vermelho);
   color: var(--azul-marinho);
   font-weight: 700;
   border-radius: var(--raio);
@@ -273,7 +274,8 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 .faixa-dados {
   margin: var(--espaco-4) 0 0;
   padding: var(--espaco-3) var(--espaco-4);
-  background: var(--ouro);
+  background: var(--branco);
+  border-left: 6px solid var(--vermelho);
   color: var(--azul-marinho);
   font-weight: 700;
   border-radius: var(--raio);
@@ -381,7 +383,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   border-radius: var(--raio);
 }
 .lj-placar.vazio { background: transparent; color: var(--azul-marinho); font-size: 26px; }
-.lj-placar small { display: block; font: 700 12px/1.3 var(--fonte-texto); color: var(--ouro); }
+.lj-placar small { display: block; font: 700 12px/1.3 var(--fonte-texto); color: var(--prata-clara); }
 .lj-info {
   display: flex;
   flex-wrap: wrap;
@@ -425,10 +427,10 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 @keyframes piscar { 50% { opacity: 0.2; } }
 
 .linha-jogo:target .lj-card,
-.linha-jogo.destacado .lj-card { box-shadow: inset 0 0 0 4px var(--ouro); }
+.linha-jogo.destacado .lj-card { box-shadow: inset 0 0 0 4px var(--azul-royal); }
 .linha-jogo:target,
 .linha-jogo.destacado { animation: destacar 1.6s ease-out 1; }
-.linha-jogo:focus { outline: 3px solid var(--ouro); outline-offset: 4px; }
+.linha-jogo:focus { outline: 3px solid var(--prata-clara); outline-offset: 4px; }
 @keyframes destacar {
   0% { transform: scale(1.03); }
   100% { transform: scale(1); }
@@ -475,7 +477,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   padding: var(--espaco-3) var(--espaco-4);
   background: var(--azul-marinho);
   color: var(--branco);
-  border: 2px solid var(--ouro);
+  border: 2px solid var(--prata-clara);
   border-radius: var(--raio);
   box-shadow: var(--sombra);
   font-weight: 700;
@@ -489,7 +491,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   font: 400 14px var(--fonte-texto);
   color: var(--azul-marinho);
   background: var(--branco);
-  border: 2px solid var(--ouro);
+  border: 2px solid var(--prata-clara);
   border-radius: var(--raio);
 }
 
@@ -523,7 +525,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   border: 2px solid var(--prata);
   border-radius: var(--raio);
 }
-.filtros select:focus-visible { border-color: var(--ouro); }
+.filtros select:focus-visible { border-color: var(--azul-royal); }
 .filtros .acoes { display: flex; gap: var(--espaco-3); margin-left: auto; }
 .filtros button {
   padding: 10px var(--espaco-3);
@@ -572,14 +574,14 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   display: inline-block;
   margin: var(--espaco-2) 0;
   padding: 0 var(--espaco-4);
-  color: var(--ouro);
+  color: var(--branco);
   background: var(--vermelho);
   transform: skewX(var(--inclinacao));
   -webkit-text-stroke: 0;
   text-shadow: none;
   box-shadow: 5px 5px 0 var(--vermelho-escuro);
 }
-.hero h1 .linha-menor { display: block; font-size: 46px; color: var(--ouro); text-shadow: 3px 3px 0 var(--vermelho-escuro); }
+.hero h1 .linha-menor { display: block; font-size: 46px; color: var(--prata-clara); text-shadow: 3px 3px 0 var(--vermelho-escuro); }
 .hero p { margin: var(--espaco-3) 0 0; color: var(--prata); font-size: 18px; }
 
 #destaque { min-height: 380px; } /* reserva espaço: evita deslocamento de layout */
@@ -600,11 +602,10 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   font-style: italic;
   font-size: 28px;
   text-transform: uppercase;
-  color: var(--ouro);
+  color: var(--branco);
   background: var(--vermelho);
   transform: skewX(var(--inclinacao));
 }
-.destaque-rotulo.ao-vivo { color: var(--branco); }
 .destaque-info { margin: 0 0 var(--espaco-3); font-weight: 700; color: var(--prata); text-transform: uppercase; letter-spacing: 0.05em; }
 .destaque-confronto {
   display: grid;
@@ -620,7 +621,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 .destaque-mensagem { margin: 0; font-family: var(--fonte-titulo); font-style: italic; text-transform: uppercase; font-size: 40px; line-height: 1.1; }
 .destaque-confronto .lado { display: flex; align-items: center; gap: var(--espaco-3); }
 .destaque-confronto .lado:first-child { justify-content: flex-end; text-align: right; }
-.destaque-confronto .versus { color: var(--ouro); font-size: 32px; }
+.destaque-confronto .versus { color: var(--prata-clara); font-size: 32px; }
 .destaque-confronto .pendente { color: var(--prata); }
 .contador {
   display: flex;
@@ -635,19 +636,20 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   padding: var(--espaco-2) var(--espaco-3);
   text-align: center;
   background: var(--azul-marinho);
-  border: 2px solid var(--ouro);
+  border: 2px solid var(--vermelho);
   border-radius: var(--raio);
 }
-.contador strong { display: block; font: 400 52px/1 var(--fonte-titulo); color: var(--ouro); }
+.contador strong { display: block; font: 400 52px/1 var(--fonte-titulo); color: var(--branco); }
 .contador span { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--branco); }
 .destaque-legenda { margin: var(--espaco-2) 0 0; text-align: center; color: var(--prata); }
 .destaque-seguinte { margin-top: var(--espaco-4); padding-top: var(--espaco-3); border-top: 1px solid var(--branco-linha); }
-.destaque-seguinte h3 { font-size: 20px; color: var(--ouro); margin-bottom: var(--espaco-2); font-style: italic; }
+.destaque-seguinte h3 { font-size: 20px; color: var(--prata-clara); margin-bottom: var(--espaco-2); font-style: italic; }
 .campeao {
   text-align: center;
   padding: var(--espaco-5);
   color: var(--azul-marinho);
-  background: var(--ouro);
+  background: var(--branco);
+  border-bottom: 8px solid var(--vermelho);
   border-radius: var(--raio);
   box-shadow: 0 0 50px var(--luz-refletor);
 }
@@ -729,7 +731,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   font-style: italic;
   font-size: 28px;
   text-transform: uppercase;
-  color: var(--ouro);
+  color: var(--branco);
   background: var(--vermelho);
   caption-side: top;
 }
@@ -752,8 +754,8 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 .tabela-classificacao .celula-time a { color: var(--azul-marinho); text-decoration: none; }
 .tabela-classificacao .celula-time a:hover { text-decoration: underline; }
 .tabela-classificacao .pts { font-weight: 700; font-size: 18px; }
-.tabela-classificacao .zona td:first-child { box-shadow: inset 6px 0 0 var(--ouro); font-weight: 700; }
-.nota-sorteio { margin: var(--espaco-2) 0 0; font-size: 14px; color: var(--ouro); font-weight: 700; }
+.tabela-classificacao .zona td:first-child { box-shadow: inset 6px 0 0 var(--vermelho); font-weight: 700; }
+.nota-sorteio { margin: var(--espaco-2) 0 0; font-size: 14px; color: var(--prata-clara); font-weight: 700; }
 .legenda { margin-top: var(--espaco-4); font-size: 14px; color: var(--prata); }
 
 /* ---------------------------------------------------------------- times */
@@ -828,7 +830,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   padding: 4px var(--espaco-3);
   font-size: 28px;
   font-style: italic;
-  color: var(--ouro);
+  color: var(--branco);
   background: var(--vermelho);
   transform: skewX(var(--inclinacao));
 }
@@ -883,12 +885,12 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   padding: 4px var(--espaco-3);
   font-size: 28px;
   font-style: italic;
-  color: var(--ouro);
+  color: var(--branco);
   background: var(--vermelho);
   transform: skewX(var(--inclinacao));
 }
 .texto-corrido p, .texto-corrido li { color: var(--branco); }
-.texto-corrido strong { color: var(--ouro); }
+.texto-corrido strong { color: var(--prata-clara); }
 .texto-corrido table { border-collapse: collapse; background: var(--branco); color: var(--azul-marinho); border-radius: var(--raio); overflow: hidden; }
 .texto-corrido th, .texto-corrido td { padding: 8px 16px; border-top: 1px solid var(--prata); text-align: left; }
 .texto-corrido thead th { background: var(--azul-royal); color: var(--branco); }
@@ -1065,5 +1067,5 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 .pagina-testes .resumo.falha { background: var(--vermelho); color: var(--branco); }
 .pagina-testes ul { list-style: none; padding: 0; }
 .pagina-testes li { padding: 6px 0; border-bottom: 1px solid var(--branco-linha); }
-.pagina-testes li.falha { color: var(--ouro); }
+.pagina-testes li.falha { color: #FFB4AB; }
 .pagina-testes pre { white-space: pre-wrap; margin: 4px 0 0 28px; color: var(--branco); background: var(--vermelho-escuro); padding: var(--espaco-2); border-radius: var(--raio); }

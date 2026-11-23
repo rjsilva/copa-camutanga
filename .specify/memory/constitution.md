@@ -1,6 +1,7 @@
 <!--
 Sync Impact Report
-- Version change: 1.1.0 → 2.0.0 (MAJOR: redefinição incompatível do Princípio I)
+- Version change: 2.0.0 → 2.1.0 (MINOR: paleta alinhada ao logo oficial, sem amarelo)
+- Anterior: 1.1.0 → 2.0.0 (MAJOR: redefinição incompatível do Princípio I)
 - Princípios modificados:
   I. Somente Desktop → I. Responsivo: Celular e Desktop — o site passa a ser usado no celular
 - Seções modificadas: Portões de Qualidade (item 6: larguras conferidas incluem 360px e 390px)
@@ -47,8 +48,8 @@ sem custos e sem risco de dependências quebrarem.
 
 ### III. Fidelidade à Identidade Visual
 
-- O visual DEVE seguir a paleta e o estilo do cartaz oficial: **azul royal, azul-marinho,
-  vermelho, branco e amarelo-ouro**.
+- O visual DEVE seguir a paleta do logo oficial (`img/logo-copa-camutanga.webp`): **azul-marinho,
+  azul royal, vermelho, branco e prata (cromado)**. NÃO há amarelo na identidade.
 - Títulos DEVEM usar tipografia **condensada, em caixa alta e itálica**.
 - Toda cor DEVE vir de uma variável CSS da paleta (ver Princípio IX); cores avulsas fora da
   paleta exigem justificativa registrada no plano.
@@ -166,4 +167,4 @@ Antes de considerar qualquer entrega pronta, DEVE-se verificar:
 - Revisões de código e de especificações DEVEM checar a conformidade com todos os princípios
   e com os portões de qualidade acima.
 
-**Version**: 2.0.0 | **Ratified**: 2026-11-23 | **Last Amended**: 2026-11-23
+**Version**: 2.1.0 | **Ratified**: 2026-11-23 | **Last Amended**: 2026-11-23
