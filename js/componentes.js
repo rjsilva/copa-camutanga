@@ -170,7 +170,7 @@
   }
 
   function campeaoHtml(time) {
-    return "<div class=\"campeao\"><img src=\"img/logo.svg\" alt=\"\" width=\"110\" height=\"128\">" +
+    return "<div class=\"campeao\"><img src=\"img/logo-copa-camutanga.webp\" alt=\"\" width=\"142\" height=\"128\">" +
       "<span class=\"titulo\">Campeão da Copa Camutanga 2026</span><span class=\"nome\">" + e(time.nome) + "</span></div>";
   }
 

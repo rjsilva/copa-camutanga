@@ -208,7 +208,7 @@ h1, h2, h3, .titulo {
   color: var(--branco);
   text-decoration: none;
 }
-.marca img { width: 48px; height: 56px; }
+.marca img { width: 62px; height: 56px; object-fit: contain; }
 .marca-texto {
   white-space: nowrap;
   font-family: var(--fonte-titulo);
@@ -541,7 +541,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 260px 1fr;
   align-items: center;
   gap: var(--espaco-5);
   padding: var(--espaco-5) 0 var(--espaco-4);
@@ -556,7 +556,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   clip-path: polygon(0 20%, 100% 0, 96% 100%, 3% 85%);
   opacity: 0.9;
 }
-.hero-trofeu { width: 220px; height: 256px; filter: drop-shadow(0 0 30px var(--luz-refletor)); }
+.hero-trofeu { width: 260px; height: 235px; object-fit: contain; filter: drop-shadow(0 0 30px var(--luz-refletor)); }
 .hero h1 {
   position: relative;
   z-index: 1;
@@ -653,7 +653,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 }
 .campeao .titulo { font-size: 30px; font-style: italic; }
 .campeao .nome { display: block; font-family: var(--fonte-titulo); font-size: 64px; font-style: italic; text-transform: uppercase; line-height: 1.1; }
-.campeao img { margin: 0 auto var(--espaco-3); width: 110px; height: 128px; }
+.campeao img { margin: 0 auto var(--espaco-3); width: 142px; height: 128px; object-fit: contain; }
 
 .grade-resultados {
   display: grid;
@@ -954,7 +954,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 
   /* cabeçalho */
   .topo .container { min-height: 0; }
-  .marca img { width: 36px; height: 42px; }
+  .marca img { width: 47px; height: 42px; }
   .marca-texto { font-size: 20px; }
   .marca-texto small { font-size: 12px; }
   .menu ul { flex-wrap: wrap; overflow: visible; gap: 4px; }
@@ -969,7 +969,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   /* início */
   .hero { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: var(--espaco-3); padding-top: var(--espaco-4); }
   .hero::before { width: 120px; height: 14px; }
-  .hero-trofeu { width: 110px; height: 128px; }
+  .hero-trofeu { width: 170px; height: 154px; }
   .hero h1 { font-size: 46px; -webkit-text-stroke-width: 1px; text-shadow: 3px 3px 0 var(--vermelho-escuro); }
   .hero h1 .linha-menor { font-size: 24px; text-shadow: 2px 2px 0 var(--vermelho-escuro); }
   .hero p { font-size: 16px; }
