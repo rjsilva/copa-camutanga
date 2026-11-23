@@ -152,6 +152,8 @@ window.COPA = {
   ],
 
   patrocinadores: [
+    { id: "manguinho-da-rua-nova",   nome: "Manguinho da Rua Nova", logo: "img/patrocinadores/manguinho-da-rua-nova.webp" },
+    { id: "vereador-lulinha",        nome: "Vereador Lulinha", logo: "img/patrocinadores/vereador-lulinha.webp" },
     { id: "dra-leandra-iris",        nome: "Dra. Leandra Iris – Fisioterapia e Pilates", logo: "img/patrocinadores/dra-leandra-iris.webp" },
     { id: "cleidson-camutanga",      nome: "Cleidson Camutanga", logo: "img/patrocinadores/cleidson-camutanga.webp" },
     { id: "mercadinho-central",      nome: "Mercadinho Central", logo: "img/patrocinadores/mercadinho-central.webp" },
@@ -169,8 +171,6 @@ window.COPA = {
     { id: "talita-fonseca",          nome: "Talita Fonseca", logo: "img/patrocinadores/talita-fonseca.webp" },
     { id: "edvan-alves",             nome: "Edvan Alves", logo: "img/patrocinadores/edvan-alves.webp" },
     { id: "comercial-nogueira",      nome: "Comercial Nogueira", logo: "img/patrocinadores/comercial-nogueira.webp" },
-    { id: "prefeitura-de-camutanga", nome: "Prefeitura de Camutanga", logo: "img/patrocinadores/prefeitura-de-camutanga.webp" },
-    { id: "vereador-lulinha",        nome: "Vereador Lulinha", logo: "img/patrocinadores/vereador-lulinha.webp" },
-    { id: "manguinho-da-rua-nova",   nome: "Manguinho da Rua Nova", logo: "img/patrocinadores/manguinho-da-rua-nova.webp" }
+    { id: "prefeitura-de-camutanga", nome: "Prefeitura de Camutanga", logo: "img/patrocinadores/prefeitura-de-camutanga.webp" }
   ]
 };
