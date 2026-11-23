@@ -37,12 +37,12 @@
   --prata-clara: #DFDFE7; /* cromado do troféu no logo */
   --branco: #FFFFFF;
   --prata: #C9CED6;
-  --gramado: #2E7D32;
+  --gramado: #2E7D32; /* só para selo de time com cor "gramado" */
+  --azul-noite: #050C22; /* azul mais escuro do logo */
   --azul-marinho-translucido: rgb(11 30 79 / 0.85);
   --azul-marinho-sombra: rgb(11 30 79 / 0.45);
   --branco-suave: rgb(255 255 255 / 0.08);
   --branco-linha: rgb(255 255 255 / 0.18);
-  --gramado-escuro: rgb(0 0 0 / 0.14);
   --luz-refletor: rgb(59 123 255 / 0.45);
   --luz-refletor-fraca: rgb(255 255 255 / 0.10);
 
@@ -1027,15 +1027,15 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 .texto-corrido th, .texto-corrido td { padding: 8px 16px; border-top: 1px solid var(--prata); text-align: left; }
 .texto-corrido thead th { background: var(--azul-royal); color: var(--branco); }
 
-/* ---------------------------------------------------------------- rodapé (gramado) */
+/* ---------------------------------------------------------------- rodapé (cores do logo) */
 .rodape {
   position: relative;
   margin-top: auto;
   padding: var(--espaco-5) 0 var(--espaco-4);
   color: var(--branco);
-  background-color: var(--gramado);
-  background-image: repeating-linear-gradient(90deg, transparent 0 60px, var(--gramado-escuro) 60px 120px);
+  background: linear-gradient(180deg, var(--azul-marinho) 0%, var(--azul-noite) 100%);
   border-top: 6px solid var(--branco);
+  box-shadow: inset 0 4px 0 var(--vermelho), inset 0 8px 0 var(--azul-royal);
 }
 .rodape::before { /* pincelada vermelha */
   content: "";
@@ -1212,7 +1212,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 /* ---------------------------------------------------------------- página de testes */
 .pagina-testes { padding: var(--espaco-4); }
 .pagina-testes .resumo { padding: var(--espaco-3) var(--espaco-4); font-size: 22px; font-weight: 700; border-radius: var(--raio); }
-.pagina-testes .resumo.ok { background: var(--gramado); color: var(--branco); }
+.pagina-testes .resumo.ok { background: var(--azul-royal); color: var(--branco); }
 .pagina-testes .resumo.falha { background: var(--vermelho); color: var(--branco); }
 .pagina-testes ul { list-style: none; padding: 0; }
 .pagina-testes li { padding: 6px 0; border-bottom: 1px solid var(--branco-linha); }

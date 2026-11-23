@@ -460,10 +460,11 @@ lista vazia, a seção não aparece.
   #3B7BFF (brilhos, hover), vermelho #D5362A (faixas de título/rodada/data, horário), vermelho
   escuro #9C2721 (sombras/bordas), branco #FFFFFF (cards, textos sobre vermelho e fundo escuro),
   prata-clara #DFDFE7 (destaques, links, foco — cromado do troféu), cinza-prata #C9CED6
-  (detalhes metálicos) e verde-gramado #2E7D32 (rodapé).
+  (detalhes metálicos) e azul-noite #050C22 (rodapé). Sem verde e sem amarelo na interface
+  (verde só como cor de selo de time).
 - **FR-022**: Fundo em gradiente azul-marinho → azul royal (estádio à noite com refletores),
-  faixas diagonais em "pinceladas" vermelhas e brancas nas bordas e textura sutil de gramado no
-  rodapé.
+  faixas diagonais em "pinceladas" vermelhas e brancas nas bordas e rodapé em azul-marinho →
+  azul-noite com filetes branco, vermelho e azul royal (cores do logo).
 - **FR-023**: Títulos MUST usar fonte condensada, caixa alta e itálica com contorno; o corpo do
   texto, fonte sans legível. As fontes MUST estar incluídas no próprio site, com alternativa do
   sistema caso não carreguem.
