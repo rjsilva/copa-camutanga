@@ -239,11 +239,22 @@
   function cardResultado(j) {
     var meta = (j.data ? L.formatarDiaSemana(j.data) + " " + L.formatarData(j.data) + " · " : "") +
       (j.fase === "grupos" ? "Grupo " + j.grupo : (ROTULO_FASE[j.fase] || "")) + " · Jogo " + j.id;
-    return "<a class=\"card-resultado\" href=\"tabela.html#jogo-" + e(j.id) + "\">" +
+    var p = j.placar;
+    var extra = [];
+    if (p.mandante === p.visitante && p.penaltis && L.placarValido(p.penaltis)) extra.push("pên. " + p.penaltis.mandante + " x " + p.penaltis.visitante);
+    if (j.wo) extra.push("W.O.");
+    function lado(r, classe, escudoDepois) {
+      var time = r && r.tipo === "time" ? r.time : null;
+      var esc = time ? escudoTime(time, 40, true) : "";
+      var nome = "<span class=\"cr-nome\">" + e(nomeLado(r)) + "</span>";
+      return "<span class=\"cr-time " + classe + "\">" + (escudoDepois ? nome + esc : esc + nome) + "</span>";
+    }
+    return "<a class=\"card-resultado\" href=\"tabela.html#jogo-" + e(j.id) + "\" aria-label=\"" + e(nomeLado(j.mandanteR) + " " + L.formatarPlacar(j) + " " + nomeLado(j.visitanteR)) + "\">" +
       "<span class=\"cr-meta\">" + e(meta) + "</span>" +
-      "<span class=\"cr-time\">" + e(nomeLado(j.mandanteR)) + "</span>" +
-      "<span class=\"cr-placar\">" + e(L.formatarPlacar(j)) + "</span>" +
-      "<span class=\"cr-time\">" + e(nomeLado(j.visitanteR)) + "</span></a>";
+      lado(j.mandanteR, "cr-mandante", true) +
+      "<span class=\"cr-placar\" aria-hidden=\"true\"><span class=\"cr-gols\">" + e(p.mandante) + "</span><span class=\"cr-x\">x</span><span class=\"cr-gols\">" + e(p.visitante) + "</span>" +
+        (extra.length ? "<small>" + e(extra.join(" · ")) + "</small>" : "") + "</span>" +
+      lado(j.visitanteR, "cr-visitante") + "</a>";
   }
 
   function paragrafos(texto) {

@@ -674,10 +674,32 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   border-radius: var(--raio);
   font-weight: 700;
   text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: var(--sombra);
 }
+.card-resultado:hover { color: var(--azul-marinho); box-shadow: 0 0 0 3px var(--azul-eletrico), var(--sombra); }
 .card-resultado .cr-meta { grid-column: 1 / -1; font-size: 13px; color: var(--azul-royal); letter-spacing: 0.05em; }
-.card-resultado .cr-time:first-of-type { text-align: right; }
-.card-resultado .cr-placar { font-family: var(--fonte-titulo); font-size: 26px; padding: 0 12px; background: var(--azul-marinho); color: var(--branco); border-radius: var(--raio); }
+.card-resultado .cr-time { display: flex; align-items: center; gap: 10px; min-width: 0; font-size: 16px; line-height: 1.2; }
+.card-resultado .cr-mandante { justify-content: flex-end; text-align: right; }
+.card-resultado .cr-visitante { justify-content: flex-start; }
+.card-resultado .cr-placar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 10px;
+  min-width: 112px;
+  padding: 6px 14px;
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  color: var(--branco);
+  background: var(--azul-marinho);
+  border-bottom: 3px solid var(--vermelho);
+  border-radius: var(--raio);
+}
+.card-resultado .cr-gols { font-size: 40px; line-height: 1; letter-spacing: 0.02em; }
+.card-resultado .cr-x { font-size: 22px; line-height: 1; color: var(--prata); }
+.card-resultado .cr-placar small { flex-basis: 100%; text-align: center; font: 700 11px/1.3 var(--fonte-texto); color: var(--prata-clara); }
 
 .atalhos { display: flex; gap: var(--espaco-4); margin-top: var(--espaco-5); }
 
@@ -696,19 +718,24 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 .dr-cabecalho { display: flex; flex-direction: column; align-items: center; gap: var(--espaco-2); margin-bottom: var(--espaco-4); }
 .dr-cabecalho p { margin: 0; }
 .dr-titulo {
-  padding: 2px var(--espaco-5);
-  font: italic 400 56px/1.1 var(--fonte-titulo);
+  padding: 10px var(--espaco-5) 6px;
+  font: normal 400 58px/1.15 var(--fonte-titulo);
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--branco);
-  background: var(--vermelho);
-  box-shadow: 5px 5px 0 var(--vermelho-escuro);
-  clip-path: polygon(0 8%, 97% 0, 100% 50%, 98% 100%, 2% 92%, 0 55%);
+  text-shadow: 3px 3px 0 var(--vermelho-escuro);
+  background: linear-gradient(180deg, #E5453A 0%, var(--vermelho) 60%, #B92D24 100%);
+  border-top: 3px solid var(--branco);
+  border-bottom: 3px solid var(--branco);
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.4);
   transform: skewX(var(--inclinacao));
 }
 .dr-subtitulo {
-  margin-top: calc(-1 * var(--espaco-2)) !important;
-  padding: 2px var(--espaco-5);
-  font: italic 400 32px/1.15 var(--fonte-titulo);
+  margin-top: calc(-1 * var(--espaco-1)) !important;
+  padding: 4px var(--espaco-5);
+  font: normal 400 32px/1.15 var(--fonte-titulo);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--azul-marinho);
   background: linear-gradient(180deg, var(--branco) 0%, var(--prata-clara) 55%, var(--prata) 100%);
@@ -1092,7 +1119,7 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   .destaque-confronto .versus { font-size: 22px; }
   .destaque-mensagem { font-size: 26px; }
   .destaque-rodada { padding: var(--espaco-3) 10px; }
-  .dr-titulo { font-size: 34px; padding: 2px var(--espaco-4); }
+  .dr-titulo { font-size: 36px; padding: 6px var(--espaco-4) 4px; text-shadow: 2px 2px 0 var(--vermelho-escuro); }
   .dr-subtitulo { font-size: 20px; padding: 2px var(--espaco-3); }
   .dr-texto { font-size: 15px; }
   .dr-jogos { gap: var(--espaco-3); }
@@ -1111,6 +1138,11 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   .campeao .nome { font-size: 40px; }
 
   .grade-resultados { grid-template-columns: 1fr; }
+  .card-resultado { gap: 8px; padding: 12px 10px; }
+  .card-resultado .cr-time { flex-direction: column; gap: 6px; font-size: 13px; text-align: center; }
+  .card-resultado .cr-mandante { flex-direction: column-reverse; justify-content: flex-end; text-align: center; }
+  .card-resultado .cr-placar { min-width: 92px; padding: 4px 10px; }
+  .card-resultado .cr-gols { font-size: 34px; }
   .atalhos { flex-direction: column; align-items: stretch; gap: var(--espaco-3); }
   .atalhos .botao { justify-content: center; }
   .grade-patrocinadores { grid-template-columns: repeat(2, 1fr); gap: 12px; }
