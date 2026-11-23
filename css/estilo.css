@@ -879,7 +879,9 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 .grupo-oficial .card-patrocinador { border-bottom-width: 6px; box-shadow: 0 8px 24px rgb(0 0 0 / 0.45); }
 
 /* Apoios: 3 colunas, como na arte */
-.grupo-apoio .grade-patrocinadores { grid-template-columns: repeat(3, 1fr); max-width: 960px; margin: 0 auto; }
+/* flex (e não grid) para a última linha incompleta ficar centralizada */
+.grupo-apoio .grade-patrocinadores { display: flex; flex-wrap: wrap; justify-content: center; max-width: 960px; margin: 0 auto; }
+.grupo-apoio .card-patrocinador { flex: 0 0 calc((100% - 2 * var(--espaco-3)) / 3); }
 
 /* Parceiros: menores, logos sobre fundo escuro */
 .grupo-parceiro .grade-patrocinadores { grid-template-columns: repeat(3, 1fr); max-width: 600px; margin: 0 auto; }
@@ -1195,7 +1197,8 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   .grupo-oficial { padding: var(--espaco-3) 10px; }
   .grupo-oficial .titulo-patrocinio { font-size: 24px; }
   .grupo-organizacao .grade-patrocinadores, .grupo-oficial .grade-patrocinadores { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .grupo-apoio .grade-patrocinadores { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .grupo-apoio .grade-patrocinadores { gap: 8px; }
+  .grupo-apoio .card-patrocinador { flex-basis: calc((100% - 16px) / 3); }
   .grupo-parceiro .grade-patrocinadores { grid-template-columns: repeat(3, 1fr); gap: 8px; }
 
   /* linha de jogo: hora + grupo em cima, confronto embaixo */

@@ -198,6 +198,7 @@ window.COPA = {
     { id: "tonho-da-venda",          categoria: "apoio", nome: "Vereador Tonho da Venda", logo: "img/patrocinadores/tonho-da-venda.webp" },
     { id: "enio-xavier",             categoria: "apoio", nome: "Amigo Enio Xavier", logo: "img/patrocinadores/enio-xavier.webp" },
     { id: "irma-lucia",              categoria: "apoio", nome: "Vereadora Irmã Lúcia", logo: "img/patrocinadores/irma-lucia.webp" },
+    { id: "toninho-camutanga",       categoria: "apoio", nome: "Toninho Camutanga – Produções Artísticas", logo: "img/patrocinadores/toninho-camutanga.webp" },
     // ---------- Parceiros
     { id: "theuzinho98",             categoria: "parceiro", nome: "Theuzinho98", logo: "img/patrocinadores/theuzinho98.webp" },
     { id: "camu-polemica",           categoria: "parceiro", nome: "Camu Polêmica", logo: "img/patrocinadores/camu-polemica.webp" },
