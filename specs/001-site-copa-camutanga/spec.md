@@ -478,6 +478,10 @@ lista vazia, a seção não aparece.
   sem rolagem horizontal da página.
 - **FR-028**: O site MUST funcionar sem login, sem servidor de aplicação e abrindo os arquivos
   diretamente no navegador ou em qualquer hospedagem estática.
+- **FR-030**: O Início MAY exibir uma rodada em destaque (ex.: "Última rodada — Fase de grupos"),
+  configurada só em `js/dados.js` (`destaque: { titulo, subtitulo, texto, jogos: [ids] }`), no
+  estilo da arte oficial — escudos, horário, "Jogo N - Grupo X" e "X" central (ou placar, se
+  lançado) —, no lugar do destaque automático de próximo jogo. Sem o bloco, volta o automático.
 - **FR-029**: O Início MUST exibir a seção "Patrocinadores" com os logos cadastrados no arquivo de
   dados, na ordem da lista, com o nome como texto alternativo e link opcional (só `http(s)`,
   abrindo em nova aba); sem patrocinadores, a seção não aparece. Incluir, remover ou trocar

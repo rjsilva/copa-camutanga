@@ -45,6 +45,21 @@
      3. Link (opcional): acrescente  link: "https://instagram.com/perfil"  (sempre com https://).
      Para tirar um patrocinador, apague a linha dele.
 
+   DESTAQUE DA PÁGINA INICIAL (opcional)
+     Mostra uma rodada em destaque no topo do Início, no estilo da arte oficial,
+     no lugar do "Próximo jogo / Aguardando resultado" automático.
+       destaque: {
+         titulo: "Última rodada",
+         subtitulo: "Fase de grupos",
+         texto: "Neste domingo 22/11 · Camutanga - PE",
+         jogos: ["C3", "D3"]          ← ids dos jogos, na ordem em que aparecem
+       },
+     Para voltar ao destaque automático, apague o bloco ou deixe  destaque: null,
+
+   ESCUDOS DOS TIMES (opcional)
+     Salve a imagem em img/escudos/ e acrescente no time:  escudo: "img/escudos/arquivo.webp"
+     Sem escudo, o site mostra um selo redondo com a sigla.
+
    VALORES PERMITIDOS
      status: "agendado", "ao-vivo", "encerrado", "adiado"
      cor dos times: "azul-marinho", "azul-royal", "vermelho", "vermelho-escuro", "gramado"
@@ -55,6 +70,13 @@
    ========================================================================== */
 
 window.COPA = {
+  destaque: {
+    titulo: "Última rodada",
+    subtitulo: "Fase de grupos",
+    texto: "Neste domingo 22/11 · Camutanga - PE",
+    jogos: ["C3", "D3"]
+  },
+
   times: [
     // ---------- Grupo A
     { id: "tropa-do-sheik",      nome: "Tropa do Sheik",      grupo: "A", sigla: "TDS", cor: "azul-royal" },
@@ -66,12 +88,12 @@ window.COPA = {
     { id: "selecao-de-ferreiros", nome: "Seleção de Ferreiros", grupo: "B", sigla: "SFE", cor: "vermelho-escuro" },
     // ---------- Grupo C
     { id: "santa-cruz",        nome: "Santa Cruz",        grupo: "C", sigla: "STC", cor: "vermelho" },
-    { id: "sport-da-toca",     nome: "Sport da Toca",     grupo: "C", sigla: "SDT", cor: "vermelho-escuro" },
-    { id: "rua-sao-sebastiao", nome: "Rua São Sebastião", grupo: "C", sigla: "RSS", cor: "azul-royal" },
+    { id: "sport-da-toca",     nome: "Sport da Toca",     grupo: "C", sigla: "SDT", cor: "vermelho-escuro", escudo: "img/escudos/sport-da-toca.webp" },
+    { id: "rua-sao-sebastiao", nome: "Rua São Sebastião", grupo: "C", sigla: "RSS", cor: "azul-royal", escudo: "img/escudos/rua-sao-sebastiao.webp" },
     // ---------- Grupo D
     { id: "cbfc",     nome: "CBFC",     grupo: "D", sigla: "CBF", cor: "azul-marinho" },
-    { id: "rua-nova", nome: "Rua Nova", grupo: "D", sigla: "RNO", cor: "gramado" },
-    { id: "songa",    nome: "Songa",    grupo: "D", sigla: "SON", cor: "azul-royal" }
+    { id: "rua-nova", nome: "Rua Nova", grupo: "D", sigla: "RNO", cor: "gramado", escudo: "img/escudos/rua-nova.webp" },
+    { id: "songa",    nome: "Songa",    grupo: "D", sigla: "SON", cor: "azul-royal", escudo: "img/escudos/songa.webp" }
   ],
 
   jogos: [

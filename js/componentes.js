@@ -195,6 +195,44 @@
     return html + "</div>";
   }
 
+  // Rodada em destaque no Início (estilo da arte oficial). d: saída de Logica.destaqueManual
+  function destaqueRodada(d, agora) {
+    if (!d) return "";
+    function lado(r) {
+      var time = r && r.tipo === "time" ? r.time : null;
+      return "<div class=\"dr-time\">" +
+        (time ? escudoTime(time, 120, true) : "<span class=\"dr-escudo-vazio\" aria-hidden=\"true\">?</span>") +
+        "<span class=\"dr-nome\">" + e(nomeLado(r)) + "</span></div>";
+    }
+    var jogos = d.jogos.map(function (j, i) {
+      var status = L.statusExibido(j, agora || new Date(0));
+      var hora = j.data ? L.formatarHora(j.data) + " hora" : "A definir";
+      var rotulo = "Jogo " + (i + 1) + " - " + (j.fase === "grupos" ? "Grupo " + j.grupo : (ROTULO_FASE[j.fase] || "Fase final"));
+      var meio = mostraPlacar(j)
+        ? "<span class=\"dr-placar\">" + e(j.placar.mandante) + "<span aria-hidden=\"true\"> x </span><span class=\"visualmente-oculto\"> a </span>" + e(j.placar.visitante) + "</span>"
+        : "<span class=\"dr-x\" aria-hidden=\"true\">X</span>";
+      var selo = (status === "ao-vivo" || status === "encerrado" || status === "adiado")
+        ? "<span class=\"selo selo-" + status + "\">" + e(ROTULO_STATUS[status]) + "</span>" : "";
+      return "<li class=\"dr-jogo\">" +
+        "<a class=\"dr-link\" href=\"tabela.html#jogo-" + e(j.id) + "\" aria-label=\"" +
+          e(rotulo + ": " + nomeConfronto(j) + (j.data ? ", às " + L.formatarHora(j.data) : "")) + "\">" +
+          lado(j.mandanteR) +
+          "<div class=\"dr-centro\"><span class=\"dr-hora\">" + e(hora) + "</span>" +
+            "<span class=\"dr-rotulo\">" + e(rotulo) + "</span>" + meio + selo + "</div>" +
+          lado(j.visitanteR) +
+        "</a></li>";
+    }).join("");
+    return "<div class=\"destaque-rodada\">" +
+      "<div class=\"dr-cabecalho\">" +
+        "<p class=\"dr-titulo\">" + e(d.titulo) + "</p>" +
+        (d.subtitulo ? "<p class=\"dr-subtitulo\">" + e(d.subtitulo) + "</p>" : "") +
+        (d.texto ? "<p class=\"dr-texto\">" + e(d.texto) + "</p>" : "") +
+      "</div>" +
+      "<ol class=\"dr-jogos\">" + jogos + "</ol>" +
+      "<p class=\"destaque-legenda\"><a href=\"tabela.html\">Ver a tabela completa</a></p>" +
+    "</div>";
+  }
+
   function nomeLado(r) { return r && r.tipo === "time" ? r.time.nome : (r ? r.rotulo : "A definir"); }
   function nomeConfronto(j) { return nomeLado(j.mandanteR) + " x " + nomeLado(j.visitanteR); }
 
@@ -301,6 +339,7 @@
     listaPorRodada: listaPorRodada,
     tabelaClassificacao: tabelaClassificacao,
     contagemRegressiva: contagemRegressiva,
+    destaqueRodada: destaqueRodada,
     partesHtml: partesHtml,
     campeaoHtml: campeaoHtml,
     cardResultado: cardResultado,

@@ -113,6 +113,14 @@
     var destaque = $("#destaque");
     function desenharDestaque() {
       var jogos = L.resolverTimes(copa());
+      var manual = L.destaqueManual(copa(), jogos);
+      var titulo = $("#titulo-destaque");
+      if (manual) {
+        if (titulo) titulo.textContent = manual.titulo;
+        renderizarSecao(destaque, function () { return C.destaqueRodada(manual, agora()); });
+        return null;
+      }
+      if (titulo) titulo.textContent = "Próximo jogo";
       var res = L.proximoJogo(jogos, agora());
       renderizarSecao(destaque, function () { return C.contagemRegressiva(res, agora()); });
       return res;

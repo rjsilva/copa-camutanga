@@ -538,6 +538,20 @@
     });
   }
 
+  // ------------------------------------------------------------------ destaque manual (Início)
+  // copa.destaque = { titulo, subtitulo, texto, jogos: ["C3", "D3"] } → rodada em destaque.
+  // Retorna null quando não há destaque válido (o Início volta ao destaque automático).
+  function destaqueManual(copa, jogosResolvidos) {
+    var d = copa && copa.destaque;
+    if (!d || typeof d !== "object" || !Array.isArray(d.jogos)) return null;
+    var porId = {};
+    (Array.isArray(jogosResolvidos) ? jogosResolvidos : []).forEach(function (j) { porId[j.id] = j; });
+    var jogos = d.jogos.map(function (id) { return porId[id]; }).filter(Boolean);
+    if (!jogos.length) return null;
+    function txt(v) { return typeof v === "string" ? v.trim() : ""; }
+    return { titulo: txt(d.titulo) || "Destaque", subtitulo: txt(d.subtitulo), texto: txt(d.texto), jogos: jogos };
+  }
+
   // ------------------------------------------------------------------ validação
   function validarDados(copa) {
     var avisos = [];
@@ -614,6 +628,17 @@
       Object.keys(idxJ).forEach(function (id) { if (!estado[id]) visitar(id); });
       if (ciclo) avisos.push("Há um ciclo de referências entre jogos (" + ciclo + ").");
 
+      if (copa.destaque !== undefined && copa.destaque !== null) {
+        if (typeof copa.destaque !== "object" || !Array.isArray(copa.destaque.jogos)) {
+          avisos.push("'destaque' precisa ter a lista de jogos, ex.: jogos: [\"C3\", \"D3\"].");
+        } else {
+          var idsDestaque = {};
+          (copa.jogos || []).forEach(function (j) { if (j) idsDestaque[j.id] = true; });
+          copa.destaque.jogos.forEach(function (id) {
+            if (!idsDestaque[id]) avisos.push("'destaque' aponta para jogo inexistente \"" + id + "\".");
+          });
+        }
+      }
       if (copa.patrocinadores !== undefined && !Array.isArray(copa.patrocinadores)) {
         avisos.push("'patrocinadores' precisa ser uma lista [ ... ].");
       } else {
@@ -660,6 +685,7 @@
     grupoCompleto: grupoCompleto,
     colocado: colocado,
     proximoJogo: proximoJogo,
+    destaqueManual: destaqueManual,
     ultimosResultados: ultimosResultados,
     partesContagem: partesContagem,
     campeao: campeao,

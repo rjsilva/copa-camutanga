@@ -453,6 +453,32 @@
     igual(L.statusExibido(jogo(copaBase(), "QF1"), agora("2026-12-01T10:00:00-03:00")), "data-a-definir");
   });
 
+  // ================================================================ Destaque manual do Início
+  teste("destaqueManual: devolve os jogos na ordem pedida, com textos", function () {
+    var c = copaBase();
+    c.destaque = { titulo: " Última rodada ", subtitulo: "Fase de grupos", texto: "Domingo", jogos: ["A1", "B1"] };
+    var d = L.destaqueManual(c, L.resolverTimes(c));
+    igual(d.jogos.map(function (j) { return j.id; }), ["A1", "B1"]);
+    igual([d.titulo, d.subtitulo, d.texto], ["Última rodada", "Fase de grupos", "Domingo"]);
+  });
+  teste("destaqueManual: sem bloco, nulo ou só com ids inexistentes → null", function () {
+    var c = copaBase();
+    igual(L.destaqueManual(c, L.resolverTimes(c)), null);
+    c.destaque = null;
+    igual(L.destaqueManual(c, L.resolverTimes(c)), null);
+    c.destaque = { jogos: ["ZZ"] };
+    igual(L.destaqueManual(c, L.resolverTimes(c)), null);
+  });
+  teste("validarDados: avisa destaque com jogo inexistente ou sem lista", function () {
+    var c = copaBase();
+    c.destaque = { jogos: ["A1", "XX"] };
+    verdadeiro(L.validarDados(c).some(function (a) { return a.indexOf("\"XX\"") !== -1; }), "deveria avisar XX");
+    c.destaque = { titulo: "Sem jogos" };
+    verdadeiro(L.validarDados(c).some(function (a) { return a.indexOf("'destaque'") !== -1; }), "deveria avisar lista ausente");
+    c.destaque = { jogos: ["A1"] };
+    verdadeiro(!L.validarDados(c).some(function (a) { return a.indexOf("'destaque'") !== -1; }), "destaque válido não gera aviso");
+  });
+
   // ================================================================ Patrocinadores (Phase 15)
   teste("listarPatrocinadores: mantém ordem e descarta itens sem nome ou logo", function () {
     var c = copaBase();
