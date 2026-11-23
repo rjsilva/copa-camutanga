@@ -81,19 +81,19 @@ window.COPA = {
     // ---------- Grupo A
     { id: "tropa-do-sheik",      nome: "Tropa do Sheik",      grupo: "A", sigla: "TDS", cor: "azul-royal" },
     { id: "gremio-de-itambe",    nome: "Grêmio de Itambé",    grupo: "A", sigla: "GIT", cor: "azul-marinho", escudo: "img/escudos/gremio-de-itambe.webp" },
-    { id: "selecao-de-timbauba", nome: "Seleção de Timbaúba", grupo: "A", sigla: "STB", cor: "vermelho", escudo: "img/escudos/selecao-de-timbauba.webp" },
+    { id: "selecao-de-timbauba", nome: "Timbaúba Futebol Clube", grupo: "A", sigla: "TFC", cor: "vermelho", escudo: "img/escudos/selecao-de-timbauba.webp" },
     // ---------- Grupo B
     { id: "gremio-da-preguica",   nome: "Grêmio da Preguiça",   grupo: "B", sigla: "GDP", cor: "azul-marinho" },
-    { id: "arara",                nome: "Arara",                grupo: "B", sigla: "ARA", cor: "gramado", escudo: "img/escudos/arara.webp" },
-    { id: "selecao-de-ferreiros", nome: "Seleção de Ferreiros", grupo: "B", sigla: "SFE", cor: "vermelho-escuro", escudo: "img/escudos/selecao-de-ferreiros.webp" },
+    { id: "arara",                nome: "Arara Futebol Clube",  grupo: "B", sigla: "ARA", cor: "gramado", escudo: "img/escudos/arara.webp" },
+    { id: "selecao-de-ferreiros", nome: "Seleção Ferreirense",  grupo: "B", sigla: "SFE", cor: "vermelho-escuro", escudo: "img/escudos/selecao-de-ferreiros.webp" },
     // ---------- Grupo C
     { id: "santa-cruz",        nome: "Santa Cruz",        grupo: "C", sigla: "STC", cor: "vermelho", escudo: "img/escudos/santa-cruz.webp" },
     { id: "sport-da-toca",     nome: "Sport da Toca",     grupo: "C", sigla: "SDT", cor: "vermelho-escuro", escudo: "img/escudos/sport-da-toca.webp" },
     { id: "rua-sao-sebastiao", nome: "Rua São Sebastião", grupo: "C", sigla: "RSS", cor: "azul-royal", escudo: "img/escudos/rua-sao-sebastiao.webp" },
     // ---------- Grupo D
-    { id: "cbfc",     nome: "CBFC",     grupo: "D", sigla: "CBF", cor: "azul-marinho", escudo: "img/escudos/cbfc.webp" },
+    { id: "cbfc",     nome: "CB Futebol Clube", grupo: "D", sigla: "CBF", cor: "azul-marinho", escudo: "img/escudos/cbfc.webp" },
     { id: "rua-nova", nome: "Rua Nova", grupo: "D", sigla: "RNO", cor: "gramado", escudo: "img/escudos/rua-nova.webp" },
-    { id: "songa",    nome: "Songa",    grupo: "D", sigla: "SON", cor: "azul-royal", escudo: "img/escudos/songa.webp" }
+    { id: "songa",    nome: "Songa FC", grupo: "D", sigla: "SON", cor: "azul-royal", escudo: "img/escudos/songa.webp" }
   ],
 
   jogos: [

@@ -1201,6 +1201,13 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   .rodape p { font-size: 14px; }
 }
 
+@media (max-width: 440px) {
+  /* classificação: esconde GP e GC (o saldo fica em SG) para os pontos sempre aparecerem */
+  .tabela-classificacao th:nth-child(7), .tabela-classificacao td:nth-child(7),
+  .tabela-classificacao th:nth-child(8), .tabela-classificacao td:nth-child(8) { display: none; }
+  .tabela-classificacao { min-width: 0; }
+}
+
 @media (max-width: 380px) {
   .hero h1 { font-size: 40px; }
   .lj-time { font-size: 13px; }
