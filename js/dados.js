@@ -111,11 +111,11 @@ window.COPA = {
       mandante: { vencedorDe: "B1" }, visitante: "selecao-de-ferreiros",
       placar: null, status: "agendado" },
     { id: "C3", fase: "grupos", grupo: "C", rodada: 3, data: "2026-11-22T14:00:00-03:00", ordemNoDia: 1,
-      mandante: { vencedorDe: "C1" }, visitante: "rua-sao-sebastiao",
-      placar: null, status: "agendado" },
+      mandante: "sport-da-toca", visitante: "rua-sao-sebastiao",   // vencedor do C1 (arte oficial)
+      placar: null, status: "agendado", observacao: "Última rodada da fase de grupos" },
     { id: "D3", fase: "grupos", grupo: "D", rodada: 3, data: "2026-11-22T16:00:00-03:00", ordemNoDia: 2,
-      mandante: { vencedorDe: "D1" }, visitante: "songa",
-      placar: null, status: "agendado" },
+      mandante: "rua-nova", visitante: "songa",   // vencedor do D1 (arte oficial)
+      placar: null, status: "agendado", observacao: "Última rodada da fase de grupos" },
 
     // ===================== QUARTAS DE FINAL (datas a definir) =====================
     { id: "QF1", fase: "quartas", data: null,
