@@ -829,8 +829,9 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   align-items: center;
   justify-content: center;
   aspect-ratio: 16 / 9;
-  padding: var(--espaco-2);
-  background: var(--branco);
+  padding: 0;
+  background: var(--azul-noite);
+  border: 1px solid var(--branco-linha);
   border-radius: var(--raio);
   border-bottom: 4px solid var(--vermelho);
   box-shadow: var(--sombra);
@@ -839,6 +840,50 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
 .card-patrocinador a { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; border-radius: var(--raio); }
 .card-patrocinador a:hover { box-shadow: 0 0 0 3px var(--azul-eletrico); }
 .card-patrocinador img { width: 100%; height: 100%; object-fit: contain; border-radius: 4px; }
+
+/* grupos de patrocínio (ordem e títulos da arte oficial) */
+.grupo-patrocinio { margin-top: var(--espaco-5); }
+.grupo-patrocinio:first-child { margin-top: var(--espaco-3); }
+.titulo-patrocinio {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  margin: 0 0 var(--espaco-4);
+  font: normal 400 26px/1.1 var(--fonte-titulo);
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: var(--branco);
+}
+.titulo-patrocinio::before, .titulo-patrocinio::after {
+  content: "";
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, var(--vermelho) 0 50%, var(--azul-royal) 50% 100%);
+  border-radius: 2px;
+}
+.titulo-patrocinio::before { background: linear-gradient(90deg, var(--azul-royal) 0 50%, var(--vermelho) 50% 100%); }
+
+/* Organização e idealização: no topo, 2 logos grandes */
+.grupo-organizacao .grade-patrocinadores { grid-template-columns: repeat(2, 1fr); max-width: 640px; margin: 0 auto; gap: var(--espaco-4); }
+
+/* Patrocinadores oficiais: em destaque */
+.grupo-oficial {
+  padding: var(--espaco-4);
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, var(--luz-refletor), transparent 75%), var(--azul-marinho-translucido);
+  border: 2px solid var(--azul-eletrico);
+  border-radius: var(--raio);
+  box-shadow: 0 0 40px var(--luz-refletor);
+}
+.grupo-oficial .titulo-patrocinio { font-size: 34px; }
+.grupo-oficial .grade-patrocinadores { grid-template-columns: repeat(4, 1fr); gap: var(--espaco-4); }
+.grupo-oficial .card-patrocinador { border-bottom-width: 6px; box-shadow: 0 8px 24px rgb(0 0 0 / 0.45); }
+
+/* Apoios: 3 colunas, como na arte */
+.grupo-apoio .grade-patrocinadores { grid-template-columns: repeat(3, 1fr); max-width: 960px; margin: 0 auto; }
+
+/* Parceiros: menores, logos sobre fundo escuro */
+.grupo-parceiro .grade-patrocinadores { grid-template-columns: repeat(3, 1fr); max-width: 600px; margin: 0 auto; }
+.grupo-parceiro .card-patrocinador { border-bottom-color: var(--azul-royal); }
 
 /* ---------------------------------------------------------------- classificação */
 .grade-classificacao {
@@ -1146,6 +1191,12 @@ main { flex: 1; padding-bottom: var(--espaco-6); }
   .atalhos { flex-direction: column; align-items: stretch; gap: var(--espaco-3); }
   .atalhos .botao { justify-content: center; }
   .grade-patrocinadores { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .titulo-patrocinio { font-size: 20px; gap: var(--espaco-2); letter-spacing: 0.05em; }
+  .grupo-oficial { padding: var(--espaco-3) 10px; }
+  .grupo-oficial .titulo-patrocinio { font-size: 24px; }
+  .grupo-organizacao .grade-patrocinadores, .grupo-oficial .grade-patrocinadores { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .grupo-apoio .grade-patrocinadores { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .grupo-parceiro .grade-patrocinadores { grid-template-columns: repeat(3, 1fr); gap: 8px; }
 
   /* linha de jogo: hora + grupo em cima, confronto embaixo */
   .linha-jogo { grid-template-columns: 1fr 1fr; min-height: 0; scroll-margin-top: 16px; }

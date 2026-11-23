@@ -493,6 +493,20 @@
     igual(L.listarPatrocinadores(copaBase()), []);
     igual(L.listarPatrocinadores(undefined), []);
   });
+  teste("patrocinadores: categoria padrão é apoio e agrupamento segue a ordem fixa", function () {
+    var c = copaBase();
+    c.patrocinadores = [
+      { id: "ap", nome: "Apoio", logo: "a.webp" },
+      { id: "pa", categoria: "parceiro", nome: "Parceiro", logo: "p.webp" },
+      { id: "of", categoria: "oficial", nome: "Oficial", logo: "o.webp" },
+      { id: "or", categoria: "organizacao", nome: "Org", logo: "g.webp" },
+      { id: "xx", categoria: "estranha", nome: "Sem categoria válida", logo: "x.webp" }
+    ];
+    var g = L.agruparPatrocinadores(L.listarPatrocinadores(c));
+    igual(g.map(function (x) { return x.categoria; }), ["organizacao", "oficial", "apoio", "parceiro"]);
+    igual(g[2].itens.map(function (p) { return p.id; }), ["ap", "xx"]);
+    verdadeiro(L.validarDados(c).some(function (a) { return a.indexOf("categoria inválida") !== -1; }), "deveria avisar categoria inválida");
+  });
   teste("listarPatrocinadores: link só é aceito com http(s)", function () {
     var c = copaBase();
     c.patrocinadores = [

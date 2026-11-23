@@ -38,10 +38,12 @@
      Copie um aviso da lista "avisos" lá embaixo e altere data, titulo e texto.
      importante: true  → o aviso também aparece em destaque na página inicial.
 
-   PATROCINADORES (aparecem na página inicial, na ordem da lista)
+   PATROCINADORES (aparecem na página inicial, separados por categoria e na ordem da lista)
      1. Salve o logo na pasta img/patrocinadores/ (de preferência .webp, .png ou .jpg pequeno).
      2. Acrescente uma linha na lista "patrocinadores" lá embaixo:
-        { id: "nome-curto", nome: "Nome do Patrocinador", logo: "img/patrocinadores/arquivo.webp" },
+        { id: "nome-curto", categoria: "apoio", nome: "Nome do Patrocinador", logo: "img/patrocinadores/arquivo.webp" },
+     categoria: "organizacao" (Organização e idealização), "oficial" (Patrocinadores oficiais,
+     em destaque), "apoio" (Apoios) ou "parceiro" (Parceiros). Sem categoria, entra em Apoios.
      3. Link (opcional): acrescente  link: "https://instagram.com/perfil"  (sempre com https://).
      Para tirar um patrocinador, apague a linha dele.
 
@@ -174,25 +176,31 @@ window.COPA = {
   ],
 
   patrocinadores: [
-    { id: "manguinho-da-rua-nova",   nome: "Manguinho da Rua Nova", logo: "img/patrocinadores/manguinho-da-rua-nova.webp" },
-    { id: "vereador-lulinha",        nome: "Vereador Lulinha", logo: "img/patrocinadores/vereador-lulinha.webp" },
-    { id: "dra-leandra-iris",        nome: "Dra. Leandra Iris – Fisioterapia e Pilates", logo: "img/patrocinadores/dra-leandra-iris.webp" },
-    { id: "cleidson-camutanga",      nome: "Cleidson Camutanga", logo: "img/patrocinadores/cleidson-camutanga.webp" },
-    { id: "mercadinho-central",      nome: "Mercadinho Central", logo: "img/patrocinadores/mercadinho-central.webp" },
-    { id: "karlos-marone",           nome: "Vereador Karlos Marone", logo: "img/patrocinadores/karlos-marone.webp" },
-    { id: "toninho-camutanga",       nome: "Toninho Camutanga – Produções Artísticas", logo: "img/patrocinadores/toninho-camutanga.webp" },
-    { id: "mazinho-pereira",         nome: "Vereador Mazinho Pereira", logo: "img/patrocinadores/mazinho-pereira.webp" },
-    { id: "tonho-da-venda",          nome: "Vereador Tonho da Venda", logo: "img/patrocinadores/tonho-da-venda.webp" },
-    { id: "fernando-de-vunda",       nome: "Vereador Fernando de Vunda", logo: "img/patrocinadores/fernando-de-vunda.webp" },
-    { id: "enio-xavier",             nome: "Amigo Enio Xavier", logo: "img/patrocinadores/enio-xavier.webp" },
-    { id: "irma-lucia",              nome: "Vereadora Irmã Lúcia", logo: "img/patrocinadores/irma-lucia.webp" },
-    { id: "ricardo-godoy",           nome: "Ricardo Godoy – O Filho de Camutanga", logo: "img/patrocinadores/ricardo-godoy.webp" },
-    { id: "click-com",               nome: "Click.com Telecomunicações", logo: "img/patrocinadores/click-com.webp" },
-    { id: "matuto-do-iphone",        nome: "Matuto do iPhone", logo: "img/patrocinadores/matuto-do-iphone.webp" },
-    { id: "gilmar-pereira",          nome: "Gilmar Pereira", logo: "img/patrocinadores/gilmar-pereira.webp" },
-    { id: "talita-fonseca",          nome: "Talita Fonseca", logo: "img/patrocinadores/talita-fonseca.webp" },
-    { id: "edvan-alves",             nome: "Edvan Alves", logo: "img/patrocinadores/edvan-alves.webp" },
-    { id: "comercial-nogueira",      nome: "Comercial Nogueira", logo: "img/patrocinadores/comercial-nogueira.webp" },
-    { id: "prefeitura-de-camutanga", nome: "Prefeitura de Camutanga", logo: "img/patrocinadores/prefeitura-de-camutanga.webp" }
+    // ---------- Organização e idealização (aparece primeiro)
+    { id: "vereador-lulinha",        categoria: "organizacao", nome: "Vereador Lulinha", logo: "img/patrocinadores/vereador-lulinha.webp" },
+    { id: "manguinho-da-rua-nova",   categoria: "organizacao", nome: "Manguinho da Rua Nova", logo: "img/patrocinadores/manguinho-da-rua-nova.webp" },
+    // ---------- Patrocinadores oficiais (em destaque)
+    { id: "matuto-do-iphone",        categoria: "oficial", nome: "Matuto do iPhone", logo: "img/patrocinadores/matuto-do-iphone.webp" },
+    { id: "ricardo-godoy",           categoria: "oficial", nome: "Ricardo Godoy – O Filho de Camutanga", logo: "img/patrocinadores/ricardo-godoy.webp" },
+    { id: "gilmar-pereira",          categoria: "oficial", nome: "Gilmar Pereira", logo: "img/patrocinadores/gilmar-pereira.webp" },
+    { id: "prefeitura-de-camutanga", categoria: "oficial", nome: "Prefeitura de Camutanga", logo: "img/patrocinadores/prefeitura-de-camutanga.webp" },
+    { id: "click-com",               categoria: "oficial", nome: "Click.com Telecomunicações", logo: "img/patrocinadores/click-com.webp" },
+    { id: "comercial-nogueira",      categoria: "oficial", nome: "Comercial Nogueira", logo: "img/patrocinadores/comercial-nogueira.webp" },
+    { id: "talita-fonseca",          categoria: "oficial", nome: "Prefeita Talita Fonseca", logo: "img/patrocinadores/talita-fonseca.webp" },
+    { id: "edvan-alves",             categoria: "oficial", nome: "Edvan Alves", logo: "img/patrocinadores/edvan-alves.webp" },
+    // ---------- Apoios
+    { id: "dra-leandra-iris",        categoria: "apoio", nome: "Dra. Leandra Iris – Fisioterapia e Pilates", logo: "img/patrocinadores/dra-leandra-iris.webp" },
+    { id: "cleidson-camutanga",      categoria: "apoio", nome: "Cleidson Camutanga", logo: "img/patrocinadores/cleidson-camutanga.webp" },
+    { id: "mercadinho-central",      categoria: "apoio", nome: "Mercadinho Central", logo: "img/patrocinadores/mercadinho-central.webp" },
+    { id: "karlos-marone",           categoria: "apoio", nome: "Vereador Karlos Marone", logo: "img/patrocinadores/karlos-marone.webp" },
+    { id: "fernando-de-vunda",       categoria: "apoio", nome: "Vereador Fernando de Vunda", logo: "img/patrocinadores/fernando-de-vunda.webp" },
+    { id: "mazinho-pereira",         categoria: "apoio", nome: "Vereador Mazinho Pereira", logo: "img/patrocinadores/mazinho-pereira.webp" },
+    { id: "tonho-da-venda",          categoria: "apoio", nome: "Vereador Tonho da Venda", logo: "img/patrocinadores/tonho-da-venda.webp" },
+    { id: "enio-xavier",             categoria: "apoio", nome: "Amigo Enio Xavier", logo: "img/patrocinadores/enio-xavier.webp" },
+    { id: "irma-lucia",              categoria: "apoio", nome: "Vereadora Irmã Lúcia", logo: "img/patrocinadores/irma-lucia.webp" },
+    // ---------- Parceiros
+    { id: "theuzinho98",             categoria: "parceiro", nome: "Theuzinho98", logo: "img/patrocinadores/theuzinho98.webp" },
+    { id: "camu-polemica",           categoria: "parceiro", nome: "Camu Polêmica", logo: "img/patrocinadores/camu-polemica.webp" },
+    { id: "o-minuto-do-jair",        categoria: "parceiro", nome: "O Minuto do Jair", logo: "img/patrocinadores/o-minuto-do-jair.webp" }
   ]
 };

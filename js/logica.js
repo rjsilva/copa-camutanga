@@ -528,14 +528,24 @@
     return typeof link === "string" && /^https?:\/\/\S+$/i.test(link.trim()) ? link.trim() : null;
   }
 
+  var CATEGORIAS_PATROCINIO = ["organizacao", "oficial", "apoio", "parceiro"];
+
   function listarPatrocinadores(copa) {
     var lista = copa && Array.isArray(copa.patrocinadores) ? copa.patrocinadores : [];
     return lista.filter(function (p) {
       return p && typeof p === "object" && typeof p.nome === "string" && p.nome.trim() &&
         typeof p.logo === "string" && p.logo.trim();
     }).map(function (p) {
-      return { id: p.id || "", nome: p.nome.trim(), logo: p.logo.trim(), link: linkSeguro(p.link) };
+      var cat = CATEGORIAS_PATROCINIO.indexOf(p.categoria) !== -1 ? p.categoria : "apoio";
+      return { id: p.id || "", nome: p.nome.trim(), logo: p.logo.trim(), link: linkSeguro(p.link), categoria: cat };
     });
+  }
+
+  // Agrupa na ordem fixa: organização → oficiais → apoios → parceiros (só grupos com itens).
+  function agruparPatrocinadores(lista) {
+    return CATEGORIAS_PATROCINIO.map(function (cat) {
+      return { categoria: cat, itens: (lista || []).filter(function (p) { return p.categoria === cat; }) };
+    }).filter(function (g) { return g.itens.length; });
   }
 
   // ------------------------------------------------------------------ destaque manual (Início)
@@ -643,6 +653,9 @@
         avisos.push("'patrocinadores' precisa ser uma lista [ ... ].");
       } else {
         (copa.patrocinadores || []).forEach(function (p, i) {
+          if (p && p.categoria !== undefined && CATEGORIAS_PATROCINIO.indexOf(p.categoria) === -1) {
+            avisos.push("Patrocinador \"" + (p.nome || p.id || i + 1) + "\" tem categoria inválida \"" + p.categoria + "\" (use organizacao, oficial, apoio ou parceiro).");
+          }
           var nome = p && p.nome ? p.nome : "nº " + (i + 1);
           if (!p || typeof p !== "object") { avisos.push("Patrocinador nº " + (i + 1) + " está mal escrito."); return; }
           if (!p.nome) avisos.push("Patrocinador nº " + (i + 1) + " está sem 'nome'.");
@@ -686,6 +699,7 @@
     colocado: colocado,
     proximoJogo: proximoJogo,
     destaqueManual: destaqueManual,
+    agruparPatrocinadores: agruparPatrocinadores,
     ultimosResultados: ultimosResultados,
     partesContagem: partesContagem,
     campeao: campeao,

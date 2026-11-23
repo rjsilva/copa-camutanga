@@ -151,7 +151,7 @@
     renderizarSecao($("#lista-patrocinadores"), function () {
       var lista = L.listarPatrocinadores(copa());
       if (secaoPatro) secaoPatro.hidden = !lista.length;
-      return C.gradePatrocinadores(lista);
+      return C.secoesPatrocinadores(L.agruparPatrocinadores(lista));
     });
     renderizarSecao($("#ultimos-resultados"), function () {
       var ult = L.ultimosResultados(L.resolverTimes(copa()), 4);

@@ -479,6 +479,9 @@ lista vazia, a seção não aparece.
   sem rolagem horizontal da página.
 - **FR-028**: O site MUST funcionar sem login, sem servidor de aplicação e abrindo os arquivos
   diretamente no navegador ou em qualquer hospedagem estática.
+- **FR-031**: A seção de patrocinadores do Início MUST seguir a arte oficial, em grupos e nesta
+  ordem: "Organização e idealização" (topo), "Patrocinadores oficiais" (em destaque), "Apoios" e
+  "Parceiros"; o grupo vem do campo `categoria` de cada patrocinador em `js/dados.js`.
 - **FR-030**: O Início MAY exibir uma rodada em destaque (ex.: "Última rodada — Fase de grupos"),
   configurada só em `js/dados.js` (`destaque: { titulo, subtitulo, texto, jogos: [ids] }`), no
   estilo da arte oficial — escudos, horário, "Jogo N - Grupo X" e "X" central (ou placar, se

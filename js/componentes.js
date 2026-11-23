@@ -329,6 +329,23 @@
   }
 
   // lista: saída de Logica.listarPatrocinadores
+  var TITULO_PATROCINIO = {
+    organizacao: "Organização e idealização",
+    oficial: "Patrocinadores oficiais",
+    apoio: "Apoios",
+    parceiro: "Parceiros"
+  };
+
+  // grupos: saída de Logica.agruparPatrocinadores
+  function secoesPatrocinadores(grupos) {
+    if (!grupos || !grupos.length) return "";
+    return grupos.map(function (g) {
+      return "<div class=\"grupo-patrocinio grupo-" + e(g.categoria) + "\">" +
+        "<h3 class=\"titulo-patrocinio\"><span>" + e(TITULO_PATROCINIO[g.categoria] || "Apoios") + "</span></h3>" +
+        gradePatrocinadores(g.itens) + "</div>";
+    }).join("");
+  }
+
   function gradePatrocinadores(lista) {
     if (!lista || !lista.length) return "";
     return "<ul class=\"grade-patrocinadores\">" + lista.map(function (p) {
@@ -342,6 +359,7 @@
 
   window.Componentes = {
     gradePatrocinadores: gradePatrocinadores,
+    secoesPatrocinadores: secoesPatrocinadores,
     escaparHtml: escaparHtml,
     escudoTime: escudoTime,
     faixaRodada: faixaRodada,
