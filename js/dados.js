@@ -79,11 +79,11 @@ window.COPA = {
 
   times: [
     // ---------- Grupo A
-    { id: "tropa-do-sheik",      nome: "Tropa do Sheik",      grupo: "A", sigla: "TDS", cor: "azul-royal" },
+    { id: "tropa-do-sheik",      nome: "Tropa do Sheik",      grupo: "A", sigla: "TDS", cor: "azul-royal", escudo: "img/escudos/tropa-do-sheik.webp" },
     { id: "gremio-de-itambe",    nome: "Grêmio de Itambé",    grupo: "A", sigla: "GIT", cor: "azul-marinho", escudo: "img/escudos/gremio-de-itambe.webp" },
     { id: "selecao-de-timbauba", nome: "Timbaúba Futebol Clube", grupo: "A", sigla: "TFC", cor: "vermelho", escudo: "img/escudos/selecao-de-timbauba.webp" },
     // ---------- Grupo B
-    { id: "gremio-da-preguica",   nome: "Grêmio da Preguiça",   grupo: "B", sigla: "GDP", cor: "azul-marinho" },
+    { id: "gremio-da-preguica",   nome: "Grêmio Sete Cabeças",  grupo: "B", sigla: "GSC", cor: "azul-marinho", escudo: "img/escudos/gremio-sete-cabecas.webp" },
     { id: "arara",                nome: "Arara Futebol Clube",  grupo: "B", sigla: "ARA", cor: "gramado", escudo: "img/escudos/arara.webp" },
     { id: "selecao-de-ferreiros", nome: "Seleção Ferreirense",  grupo: "B", sigla: "SFE", cor: "vermelho-escuro", escudo: "img/escudos/selecao-de-ferreiros.webp" },
     // ---------- Grupo C
