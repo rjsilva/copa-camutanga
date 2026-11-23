@@ -376,7 +376,8 @@ lista vazia, a seção não aparece.
 - **Nenhum jogo futuro**: Início mostra mensagem de fase encerrada/aguardando fase final ou
   o campeão.
 - **Time sem escudo**: selo com as iniciais nas cores da Copa.
-- **Janela menor que 1024px**: o site não se adapta; rolagem horizontal é aceitável.
+- **Tela de celular (360–720px)**: o layout se adapta (uma coluna, menu em duas linhas,
+  tabelas de classificação com rolagem interna); a página nunca rola na horizontal.
 
 ## Requirements *(mandatory)*
 
@@ -473,8 +474,8 @@ lista vazia, a seção não aparece.
   (ex.: nunca amarelo sobre branco).
 - **FR-026**: O site MUST ser navegável por teclado, com foco visível, e toda imagem informativa
   MUST ter texto alternativo.
-- **FR-027**: O site é exclusivo para desktop (largura mínima 1024px, otimizado para
-  1280–1920px); não há versão para celular.
+- **FR-027**: O site MUST ser responsivo, funcionando de 360px (celular) a 1920px (desktop)
+  sem rolagem horizontal da página.
 - **FR-028**: O site MUST funcionar sem login, sem servidor de aplicação e abrindo os arquivos
   diretamente no navegador ou em qualquer hospedagem estática.
 - **FR-029**: O Início MUST exibir a seção "Patrocinadores" com os logos cadastrados no arquivo de
@@ -541,4 +542,4 @@ lista vazia, a seção não aparece.
 - **Imagem de pré-visualização** e domínio de publicação serão definidos na implantação; a
   pré-visualização completa depende de o site estar publicado em endereço público.
 - **Fora do escopo (v1)**: placar ao vivo em tempo real, painel administrativo com login,
-  apostas, venda de ingressos, comentários, versão mobile.
+  apostas, venda de ingressos, comentários, aplicativo.

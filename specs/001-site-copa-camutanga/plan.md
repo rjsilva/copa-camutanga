@@ -27,7 +27,7 @@ build, dependências nem servidor: o site funciona via `file://`, GitHub Pages o
 
 **Testing**: `testes.html` com mini-executor próprio em `js/testes.js` (sem framework)
 
-**Target Platform**: navegadores desktop atuais (Chrome, Edge, Firefox, Safari), largura ≥ 1024px
+**Target Platform**: navegadores atuais de desktop e celular (Chrome, Edge, Firefox, Safari), largura de 360px a 1920px
 
 **Project Type**: site estático (multipágina)
 
@@ -35,7 +35,7 @@ build, dependências nem servidor: o site funciona via `file://`, GitHub Pages o
 inicial < 500 KB (estimativa ≈ 270 KB, ver research R12)
 
 **Constraints**: funcionar em `file://` (proibidos `fetch` e ES modules); caminhos relativos;
-sem CDN; horários em America/Recife; WCAG AA; sem media queries para celular
+sem CDN; horários em America/Recife; WCAG AA; responsivo (media queries para celular)
 
 **Scale/Scope**: 12 times, 19 jogos (12 de grupos + 7 de mata-mata), algumas dezenas de avisos,
 8 arquivos HTML e 5 arquivos JS
@@ -46,7 +46,7 @@ sem CDN; horários em America/Recife; WCAG AA; sem media queries para celular
 
 | # | Princípio | Como o plano atende | Pré | Pós |
 |---|---|---|---|---|
-| I | Somente desktop | `body { min-width: 1024px }`, container de no máximo 1200px, nenhuma media query de celular | ✅ | ✅ |
+| I | Responsivo: celular e desktop | Layout-base desktop + media queries em 1100/900/720/380px; sem rolagem horizontal | ✅ | ✅ |
 | II | Estático, tecnologia pura | HTML, CSS e JS puros; scripts clássicos; `window.COPA` em `js/dados.js`; sem `fetch`, módulos, npm ou CDN; caminhos relativos (R1, R2) | ✅ | ✅ |
 | III | Identidade visual | 9 custom properties da paleta; faixas com `skewX` e `clip-path`; Anton condensada em caixa alta, inclinada e com contorno (R4) | ✅ | ✅ |
 | IV | Performance | sem imagens de fundo (gradientes); fontes com subconjunto latin; orçamento ≈ 270 KB (R12) | ✅ | ✅ |

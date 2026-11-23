@@ -1,12 +1,11 @@
 <!--
 Sync Impact Report
-- Version change: 1.0.0 → 1.1.0 (MINOR: ampliação material de orientação)
+- Version change: 1.1.0 → 2.0.0 (MAJOR: redefinição incompatível do Princípio I)
 - Princípios modificados:
-  II. Site Estático em Tecnologia Pura — `window.COPA` passa a incluir `patrocinadores`
-  VII. Atualização Fácil pelo Organizador — trocar patrocinadores também só pelo js/dados.js
-- Seções adicionadas/removidas: nenhuma
-- Templates dependentes: não modificados (leem a constituição em tempo de execução)
-- Artefatos da feature 001 a alinhar: contracts/dados-js.md, data-model.md (feito na mesma emenda)
+  I. Somente Desktop → I. Responsivo: Celular e Desktop — o site passa a ser usado no celular
+- Seções modificadas: Portões de Qualidade (item 6: larguras conferidas incluem 360px e 390px)
+- Motivo: o público acompanha a Copa pelo celular (link compartilhado no WhatsApp)
+- Artefatos da feature 001 alinhados: spec.md (FR-027, casos de borda, fora do escopo), plan.md
 - TODOs: nenhum
 -->
 
@@ -14,16 +13,17 @@ Sync Impact Report
 
 ## Core Principles
 
-### I. Somente Desktop
+### I. Responsivo: Celular e Desktop
 
-- O site é projetado exclusivamente para telas de computador: largura mínima suportada de
-  **1024px**, layout otimizado para **1280–1920px**.
-- NÃO haverá versão mobile, layout responsivo para celular, media queries voltadas a telas
-  pequenas, nem aplicativo.
-- Abaixo de 1024px o site PODE exibir rolagem horizontal; não é defeito.
+- O site DEVE funcionar bem do celular (a partir de **360px** de largura) ao desktop
+  (até **1920px**), com um único HTML e CSS responsivo (media queries), sem versão separada
+  nem aplicativo.
+- Em nenhuma largura suportada a página PODE ter rolagem horizontal; tabelas largas rolam
+  dentro do próprio quadro.
+- Alvos de toque confortáveis e texto legível sem zoom no celular.
 
-**Justificativa**: o público consulta tabela e jogos no computador; um único alvo de tela mantém
-o projeto simples e reduz o trabalho de manutenção.
+**Justificativa**: o público acompanha jogos e classificação principalmente pelo celular,
+com o link compartilhado no WhatsApp.
 
 ### II. Site Estático em Tecnologia Pura (NÃO NEGOCIÁVEL)
 
@@ -137,7 +137,7 @@ no `testes.html` e o código fácil de entender.
   - `img/`, `fontes/` — recursos locais
 - Ordem de carregamento: `dados.js` → lógica pura → renderização, via `<script defer>` ou ao fim
   do `body`.
-- Compatibilidade: versões atuais de Chrome, Edge, Firefox e Safari para desktop.
+- Compatibilidade: versões atuais de Chrome, Edge, Firefox e Safari, no desktop e no celular (Android e iOS).
 - Sem rastreadores ou scripts de terceiros que comprometam performance ou privacidade.
 
 ## Fluxo de Desenvolvimento e Portões de Qualidade
@@ -149,7 +149,7 @@ Antes de considerar qualquer entrega pronta, DEVE-se verificar:
 3. Nenhum arquivo, dependência ou ferramenta proibida pelo Princípio II foi introduzido.
 4. Lighthouse desktop ≥ 90 em Performance, Acessibilidade e SEO; página inicial < 500 KB.
 5. Navegação completa por teclado e contraste AA verificados.
-6. Visual conferido em 1024px, 1280px e 1920px de largura.
+6. Visual conferido em 360px, 390px, 768px, 1024px, 1280px e 1920px de largura, sem rolagem horizontal.
 7. Um placar de teste lançado apenas em `js/dados.js` reflete corretamente em todo o site.
 
 ## Governance
@@ -166,4 +166,4 @@ Antes de considerar qualquer entrega pronta, DEVE-se verificar:
 - Revisões de código e de especificações DEVEM checar a conformidade com todos os princípios
   e com os portões de qualidade acima.
 
-**Version**: 1.1.0 | **Ratified**: 2026-11-23 | **Last Amended**: 2026-11-23
+**Version**: 2.0.0 | **Ratified**: 2026-11-23 | **Last Amended**: 2026-11-23
